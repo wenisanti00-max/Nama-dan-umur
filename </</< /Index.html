@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nama dan Umur</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <h1>Website Nama dan Umur</h1>
+
+  <label>Nama:</label>
+  <input type="text" id="nama" placeholder="Masukkan nama">
+
+  <br><br>
+
+  <label>Umur:</label>
+  <input type="number" id="umur" placeholder="Masukkan umur">
+
+  <br><br>
+
+  <button id="tampil">Tampilkan</button>
+
+  <p id="hasil"></p>
+
+  <script>
+    $("#tampil").click(function() {
+      const nama = $("#nama").val().trim();
+      const umur = $("#umur").val();
+
+      if (nama === "" || umur === "" || Number(umur) < 0) {
+        $("#hasil").text("Isi nama dan umur dengan benar.");
+        return;
+      }
+
+      $("#hasil").text(
+        "Halo, " + nama + "! Umur kamu " + umur + " tahun."
+      );
+    });
+  </script>
+</body>
+</html>
